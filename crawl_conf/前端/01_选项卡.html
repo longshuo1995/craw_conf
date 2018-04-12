@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .tab_con{
+            width:500px;
+            height:350px;
+            margin:50px auto 0;
+        }
+        .btn_con{
+            height: 50px;;
+            font-size: 0px;
+        }
+        .btn_con input{
+            width: 100px;;
+            height: 50px;;
+            margin:0;
+            border: 0px;;
+        }
+
+        .contents{
+            height: 300px;;
+        }
+
+        .contents div{
+            display: none;
+            background: #ff0;
+            line-height: 125px;
+            width: 300px;;
+            height: 125px;;
+            text-align: center;
+        }
+        input{
+            background: #fff;
+        }
+        .active{
+            background: #ffff00;
+        }
+        .contents .current{
+            display: block;
+        }
+    </style>
+</head>
+<body>
+<div class="tab_con">
+    <div class="btn_con">
+        <input type="button" value="内容一" class="active">
+        <input type="button" value="内容二">
+        <input type="button" value="内容三">
+    </div>
+    <div class="contents">
+        <div class="current">内容一对应文字</div>
+        <div>内容二对应文字</div>
+        <div>内容三对应文字</div>
+    </div>
+</div>
+</body>
+<script src="js/jquery-1.12.4.min.js"> </script>
+<script>
+    $btns = $('.btn_con input');
+    $btns.click(function () {
+        alert('hah')
+    })
+</script>
+</html>

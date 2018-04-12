@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>抓取器配置页面</title>
+    <script type="text/javascript" src="/static/js/jquery-1.12.4.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="/static/css/main.css">
+</head>
+
+<body>
+    <script type="text/javascript" src="/static/js/main.js"></script>
+    <div class="div_mid">
+        <span>起始地址</span>
+        <input type="text" name="base_url" id="base_url">
+        <select id="is_structing">
+            <option value="1">结构化</option>
+            <option value="0">非结构化</option>
+        </select>
+        <br>
+    </div>
+    <div class="div_mid">
+        <input type="radio" id="level1" name="level" value="level1" checked="checked">一级
+        <input type="radio" id="level2" name="level" value="level2">二级
+        <input type="radio" id="level3" name="level" value="level3">三级
+        <input type="radio" id="level4" name="level" value="level4">四级
+
+    </div>
+    <div class="div_mid">
+        库名：<input type="text" id="data_name" value="portal">
+        表名: <input type="text" id="table_name" value="web_data">
+    </div>
+
+    <div class="div_mid">
+        source_spider: <input type="text" id="source_spider">
+        轮询时间(s): <input type="text" id="time_interval" value="60*5">
+    </div>
+
+    <div class="div_mid">
+        <span>请求地址</span>
+        <select name="request_url" id="request_url">
+        </select>
+        <button id="btn_insert">入库</button> <input id="mongo_id">
+    </div>
+
+    <div class="div_mid">
+        <div class="in_line" id="div_rule">
+            <div id="text_rule">规则列表</div>
+            <div id="rule_items"> </div>
+
+        </div>
+        <div class="in_line" id="div_btn">
+            <button id="btn_delete">删除</button><button id="btn_clear">清空</button><button id="btn_save">保存</button>
+        <div>
+            字段名称：<input type="text" id="field_name">
+            <br>
+            规则类型：
+            <select id="rule_type">
+                <option value="xpath">xpath</option>
+                <option value="bs4">beautifulsoup</option>
+                <option value="re">正则</option>
+                <option value="other">自定义</option>
+            </select>
+            <br>
+            字段类型：
+            <select id="field_type">
+                <option value="static_url">静态url</option>
+                <option value="dynamic_url">动态url</option>
+                <option value="article">正文</option>
+                <option value="create_time">发布时间</option>
+                <option value="next_page">下一页</option>
+                <option value="other">其它</option>
+            </select>
+            <br>
+            source:
+            <select id="source_type">
+                <option value="html">html</option>
+                <option value="url">url</option>
+            </select>
+            <br>
+            字段rule:
+            <textarea id="field_rule"></textarea>
+            <br>
+            res正则py:
+            <br>
+            <textarea id="replace_row"></textarea>
+            <br>
+            <span class="center_verticle">></span>
+            <br>
+            <textarea id="replace_result"></textarea>
+        </div>
+        </div>
+        <div class="in_line" id="div_check">
+            <button id="btn_check">检测</button>
+            <div id="check_show"></div>
+        </div>
+     </div>
+</body>
+</html>
